@@ -1,14 +1,17 @@
 terraform {
 
-  backend "s3" {
-    bucket = "tanushree-test1"
-    key    = "terraform-states/demo-repo/terraform.tfstate"
-    region = "us-west-2"
-  }
   required_providers {
     aws = {
       version = ">= 5.39.0"
       source  = "hashicorp/aws"
+    }
+  }
+  cloud {
+    organization = "HashiCorp-tanushree"
+    hostname     = "app.terraform.io"
+    workspaces {
+      project = "demo_repo"
+      name    = "demo_repo_default"
     }
   }
 }
