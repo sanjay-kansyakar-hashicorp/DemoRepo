@@ -3,7 +3,7 @@ terraform {
   backend "s3" {
     bucket = "mybucket-migrate-test"
     key    = "terraform-states/demo-repo/terraform.tfstate"
-    region = "us-west-2"
+    region = "eu-north-1"
   }
   required_providers {
     aws = {
